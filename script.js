@@ -1,69 +1,52 @@
 (function(){
+  'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- motor de capítulos: fade/translate por "step" ---------- */
   var chapters = Array.from(document.querySelectorAll('.chapter'));
-
-  chapters.forEach(function(chapter){
-    var layers = Array.from(chapter.querySelectorAll('.layer'));
-    if(!layers.length) return;
-
-    // Cada layer ocupa uma fatia igual da altura do capítulo.
-    var n = layers.length;
-
-    function onScroll(){
-      var rect = chapter.getBoundingClientRect();
-      var total = rect.height - window.innerHeight;
-      if(total <= 0){ return; }
-      var progress = Math.min(1, Math.max(0, -rect.top / total));
-
-      chapter.classList.toggle('is-active', rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * 0.1);
-
-      var activeStep = Math.min(n - 1, Math.floor(progress * n));
-      layers.forEach(function(layer, i){
-        layer.classList.toggle('is-visible', i === activeStep);
-      });
-    }
-
-    chapter.__onScroll = onScroll;
-  });
-
-  var ticking = false;
-  function handleScroll(){
-    if(ticking) return;
-    ticking = true;
-    requestAnimationFrame(function(){
-      chapters.forEach(function(c){ c.__onScroll(); });
-      updateTimeline();
-      ticking = false;
-    });
-  }
-
-  /* ---------- timeline lateral ---------- */
   var fill = document.getElementById('timelineFill');
   var marker = document.getElementById('timelineMarker');
   var label = document.getElementById('timelineLabel');
   var narrative = chapters.filter(function(c){ return c.dataset.chapterLabel; });
+  var ticking = false;
+
+  function updateChapter(chapter){
+    var layers = Array.from(chapter.querySelectorAll('.layer'));
+    if(!layers.length) return;
+    var rect = chapter.getBoundingClientRect();
+    var total = Math.max(1, rect.height - window.innerHeight);
+    var progress = Math.min(1, Math.max(0, -rect.top / total));
+    var active = Math.min(layers.length - 1, Math.floor(progress * layers.length));
+    chapter.classList.toggle('is-active', rect.top < window.innerHeight * .9 && rect.bottom > window.innerHeight * .1);
+    chapter.style.setProperty('--chapter-progress', progress.toFixed(3));
+    layers.forEach(function(layer,i){ layer.classList.toggle('is-visible', i === active); });
+  }
 
   function updateTimeline(){
     var doc = document.documentElement;
-    var scrollTop = window.scrollY;
-    var max = doc.scrollHeight - window.innerHeight;
-    var pct = max > 0 ? Math.min(1, Math.max(0, scrollTop / max)) : 0;
-
-    fill.style.height = (pct * 100) + '%';
-    marker.style.top = (pct * 100) + '%';
-    label.style.top = (pct * 100) + '%';
-
+    var max = Math.max(1, doc.scrollHeight - window.innerHeight);
+    var pct = Math.min(1, Math.max(0, window.scrollY / max));
+    if(fill) fill.style.height = (pct*100)+'%';
+    if(marker) marker.style.top = (pct*100)+'%';
+    if(label) label.style.top = (pct*100)+'%';
     var current = narrative[0];
-    for(var i = 0; i < narrative.length; i++){
-      var r = narrative[i].getBoundingClientRect();
-      if(r.top < window.innerHeight * 0.6){ current = narrative[i]; }
-    }
-    if(current){ label.textContent = current.dataset.chapterLabel; }
+    narrative.forEach(function(chapter){
+      if(chapter.getBoundingClientRect().top < window.innerHeight*.58) current = chapter;
+    });
+    if(label && current) label.textContent = current.dataset.chapterLabel;
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  window.addEventListener('resize', handleScroll);
-  handleScroll();
+  function update(){
+    chapters.forEach(updateChapter);
+    updateTimeline();
+    ticking = false;
+  }
+  function requestUpdate(){
+    if(ticking) return;
+    ticking = true;
+    if(reduceMotion) update(); else requestAnimationFrame(update);
+  }
+
+  window.addEventListener('scroll', requestUpdate, {passive:true});
+  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('load', requestUpdate);
+  requestUpdate();
 })();

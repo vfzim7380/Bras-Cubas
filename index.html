@@ -4,14 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Memórias Póstumas de Brás Cubas — uma experiência</title>
+<meta name="theme-color" content="#11100E">
 <meta name="description" content="Uma experiência narrativa em scroll sobre Memórias Póstumas de Brás Cubas, de Machado de Assis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
+<div class="chapter-wash" aria-hidden="true"></div>
 
 <nav class="visually-hidden" aria-label="Aviso">
   Esta página não possui menu de navegação. Percorra o conteúdo rolando a tela.
@@ -31,6 +33,8 @@
   <!-- ABERTURA -->
   <section class="chapter opening" id="opening" aria-label="Abertura">
     <div class="chapter__stage">
+      <span class="opening__kicker">uma experiência de leitura</span>
+      <div class="opening__rule" aria-hidden="true"></div>
       <div class="layer layer--death" data-step="0">
         <h1>EU MORRI.</h1>
       </div>
@@ -48,6 +52,7 @@
   <section class="chapter" id="cap01" data-chapter-label="capítulo 01 · a morte" aria-labelledby="cap01-title">
     <div class="chapter__stage">
       <span class="chapter__num">Capítulo 01</span>
+      <span class="chapter__ghost">01</span>
 
       <div class="layer" data-step="0">
         <h2 id="cap01-title" class="chapter__title">A Morte</h2>
@@ -73,6 +78,7 @@
   <section class="chapter" id="cap02" data-chapter-label="capítulo 02 · o defunto autor" aria-labelledby="cap02-title">
     <div class="chapter__stage">
       <span class="chapter__num">Capítulo 02</span>
+      <span class="chapter__ghost">02</span>
 
       <div class="layer" data-step="0">
         <h2 id="cap02-title" class="chapter__title">O Defunto Autor</h2>
@@ -97,6 +103,7 @@
   <section class="chapter" id="cap03" data-chapter-label="capítulo 03 · nascimento" aria-labelledby="cap03-title">
     <div class="chapter__stage">
       <span class="chapter__num">Capítulo 03</span>
+      <span class="chapter__ghost">03</span>
       <div class="layer layer--year" data-step="0">
         <div class="year">1839</div>
       </div>
@@ -107,7 +114,7 @@
           gerações. Meu pai, Damião Cubas, fez fortuna no comércio — e passou boa
           parte da vida tentando parecer nobre.
         </p>
-        <span class="chapter__eyebrow" style="margin-top:0.8rem;">ano aproximado, adotado nesta experiência — o romance não fixa uma data exata</span>
+        <span class="chapter__eyebrow chapter__eyebrow--spaced">ano aproximado, adotado nesta experiência — o romance não fixa uma data exata</span>
       </div>
     </div>
   </section>
@@ -116,6 +123,7 @@
   <section class="chapter" id="cap04" data-chapter-label="capítulo 04 · infância" aria-labelledby="cap04-title">
     <div class="chapter__stage">
       <span class="chapter__num">Capítulo 04</span>
+      <span class="chapter__ghost">04</span>
       <div class="layer" data-step="0">
         <h2 id="cap04-title" class="chapter__title">Infância</h2>
         <p class="chapter__body">
@@ -139,6 +147,7 @@
   <section class="chapter" id="cap05" data-chapter-label="capítulo 05 · marcela" aria-labelledby="cap05-title">
     <div class="chapter__stage">
       <span class="chapter__num">Capítulo 05</span>
+      <span class="chapter__ghost">05</span>
       <div class="layer" data-step="0">
         <h2 id="cap05-title" class="chapter__title">Marcela</h2>
         <p class="chapter__body">
@@ -146,7 +155,12 @@
           "Marcela amou-me durante quinze meses e onze contos de réis."
         </p>
       </div>
-      <div class="layer" data-step="1">
+      <div class="layer layer--ledger" data-step="1">
+        <div class="ledger" aria-label="Marcela em números">
+          <div><strong>15</strong><span>meses</span></div>
+          <i aria-hidden="true"></i>
+          <div><strong>11</strong><span>contos de réis</span></div>
+        </div>
         <span class="chapter__eyebrow">interpretação</span>
         <p class="chapter__body">
           A frase resume o tom do livro inteiro: o amor descrito em termos
@@ -161,6 +175,7 @@
   <section class="chapter" id="cap06" data-chapter-label="capítulo 06 · europa" aria-labelledby="cap06-title">
     <div class="chapter__stage">
       <span class="chapter__num">Capítulo 06</span>
+      <span class="chapter__ghost">06</span>
       <div class="layer" data-step="0">
         <h2 id="cap06-title" class="chapter__title">Europa</h2>
         <p class="chapter__body">
@@ -182,6 +197,7 @@
   <section class="chapter" id="cap07" data-chapter-label="capítulo 07 · virgília" aria-labelledby="cap07-title">
     <div class="chapter__stage">
       <span class="chapter__num">Capítulo 07</span>
+      <span class="chapter__ghost">07</span>
       <div class="layer" data-step="0">
         <h2 id="cap07-title" class="chapter__title">Virgília</h2>
         <p class="chapter__body">
@@ -202,9 +218,11 @@
 
   <!-- CAPÍTULO 08 — QUINCAS BORBA -->
   <section class="chapter" id="cap08" data-chapter-label="capítulo 08 · quincas borba" aria-labelledby="cap08-title">
-    <div class="chapter__stage">
+    <div class="chapter__stage chapter__stage--humanitismo">
       <span class="chapter__num">Capítulo 08</span>
+      <span class="chapter__ghost">08</span>
       <div class="layer" data-step="0">
+        <div class="humanitas-mark" aria-hidden="true">H</div>
         <h2 id="cap08-title" class="chapter__title">Quincas Borba</h2>
         <p class="chapter__body">
           Meu amigo Quincas Borba criou uma filosofia própria: o Humanitismo.
@@ -225,9 +243,11 @@
 
   <!-- CAPÍTULO 09 — O EMPLASTO -->
   <section class="chapter" id="cap09" data-chapter-label="capítulo 09 · o emplasto" aria-labelledby="cap09-title">
-    <div class="chapter__stage">
+    <div class="chapter__stage chapter__stage--emplasto">
       <span class="chapter__num">Capítulo 09</span>
+      <span class="chapter__ghost">09</span>
       <div class="layer" data-step="0">
+        <div class="emplasto-label" aria-hidden="true"><span>EMPLASTO</span><small>BRÁS CUBAS</small></div>
         <h2 id="cap09-title" class="chapter__title">O Emplasto</h2>
         <p class="chapter__body">
           Antes de morrer, eu tinha um projeto: o Emplasto Brás Cubas, um remédio
@@ -247,8 +267,9 @@
 
   <!-- CAPÍTULO 10 — A MORTE (retorno) -->
   <section class="chapter" id="cap10" data-chapter-label="capítulo 10 · a morte" aria-labelledby="cap10-title">
-    <div class="chapter__stage">
+    <div class="chapter__stage chapter__stage--death">
       <span class="chapter__num">Capítulo 10</span>
+      <span class="chapter__ghost">10</span>
       <div class="layer" data-step="0">
         <h2 id="cap10-title" class="chapter__title">A Morte</h2>
         <p class="chapter__body">
@@ -266,6 +287,7 @@
   <section class="chapter" id="cap11" data-chapter-label="capítulo 11 · o que ficou" aria-labelledby="cap11-title">
     <div class="chapter__stage">
       <span class="chapter__num">Capítulo 11</span>
+      <span class="chapter__ghost">11</span>
       <div class="layer" data-step="0">
         <h2 id="cap11-title" class="chapter__title">O Que Ficou</h2>
         <p class="chapter__body">
@@ -284,7 +306,7 @@
   </section>
 
   <!-- CAPÍTULO 12 — ENCERRAMENTO -->
-  <section class="chapter" id="cap12" data-chapter-label="capítulo 12 · encerramento" aria-labelledby="cap12-title" style="min-height:180vh;">
+  <section class="chapter" id="cap12" data-chapter-label="capítulo 12 · encerramento" aria-labelledby="cap12-title">
     <div class="chapter__stage">
       <div class="layer impact" data-step="0">
         <h2 id="cap12-title">BRÁS CUBAS MORREU.</h2>
@@ -296,7 +318,18 @@
   </section>
 
 </main>
+  <section class="sources" aria-labelledby="sources-title">
+    <div class="sources__inner">
+      <span class="chapter__eyebrow">ficha da experiência</span>
+      <h2 id="sources-title">Referências</h2>
+      <p>Conteúdo baseado na obra <em>Memórias Póstumas de Brás Cubas</em>, de Machado de Assis, publicada em 1881.</p>
+      <p class="sources__note">As interpretações apresentadas nesta experiência são uma leitura didática e visual da obra; não substituem a leitura integral do romance.</p>
+      <div class="sources__line"></div>
+      <p class="sources__credit">Projeto escolar · experiência narrativa em scroll</p>
+    </div>
+  </section>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
+
 </body>
 </html>
