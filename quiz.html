@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz — Memórias Póstumas de Brás Cubas</title>
+<meta name="theme-color" content="#11100E">
+<meta name="description" content="Teste seus conhecimentos sobre Memórias Póstumas de Brás Cubas, de Machado de Assis, com 10 perguntas.">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body class="quiz-page">
+<div class="grain" aria-hidden="true"></div>
+<div class="chapter-wash" aria-hidden="true"></div>
+<div class="quiz-ghost" id="quizGhost" aria-hidden="true">?</div>
+
+<header class="quiz-topbar">
+  <a class="quiz-back" href="index.html"><span aria-hidden="true">←</span> Voltar para o site</a>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar modo claro" aria-pressed="false">
+    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+    <span class="theme-toggle__text theme-toggle__text--to-light">modo claro</span>
+    <span class="theme-toggle__text theme-toggle__text--to-dark">modo escuro</span>
+  </button>
+</header>
+
+<main class="quiz-shell" id="quiz">
+
+  <!-- TELA INICIAL -->
+  <section class="quiz-screen quiz-intro" id="screenIntro" aria-labelledby="introTitle">
+    <span class="chapter__eyebrow">quiz · memórias póstumas de brás cubas</span>
+    <div class="quiz-rule" aria-hidden="true"></div>
+    <h1 class="quiz-title" id="introTitle">Teste suas memórias</h1>
+    <p class="quiz-lead">
+      São 10 perguntas baseadas no conteúdo desta experiência. Há questões de múltipla escolha,
+      de verdadeiro ou falso — e uma que aceita mais de uma resposta.
+    </p>
+    <ul class="quiz-meta">
+      <li>10 perguntas</li>
+      <li>sem tempo limite</li>
+      <li>resultado no final</li>
+    </ul>
+    <button class="quiz-btn quiz-btn--primary" id="startBtn" type="button">Começar o quiz</button>
+  </section>
+
+  <!-- PERGUNTAS -->
+  <section class="quiz-screen quiz-question-screen" id="screenQuestion" aria-labelledby="quizQuestion" hidden>
+    <div class="quiz-progress">
+      <p class="quiz-progress__text" id="progressText">Pergunta 1 de 10</p>
+      <div class="quiz-progress__track" id="progressTrack" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+        <div class="quiz-progress__fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <span class="chapter__eyebrow quiz-hint" id="questionHint"></span>
+    <h2 class="quiz-question" id="quizQuestion" tabindex="-1"></h2>
+
+    <div class="quiz-options" id="options" role="group" aria-labelledby="quizQuestion"></div>
+
+    <div class="quiz-feedback" id="feedback" role="status" aria-live="polite" hidden></div>
+
+    <div class="quiz-actions" id="actions">
+      <button class="quiz-btn quiz-btn--primary" id="actionBtn" type="button" disabled>Próxima pergunta</button>
+    </div>
+  </section>
+
+  <!-- RESULTADO -->
+  <section class="quiz-screen quiz-result" id="screenResult" aria-labelledby="resultTitle" hidden>
+    <span class="chapter__eyebrow">resultado</span>
+    <p class="quiz-score" aria-label="Pontuação"><strong id="scoreBig">0/10</strong><span>pontuação</span></p>
+
+    <div class="quiz-stats" aria-label="Detalhes do resultado">
+      <div><strong id="statHits">0</strong><span>acertos</span></div>
+      <i aria-hidden="true"></i>
+      <div><strong id="statMisses">0</strong><span>erros</span></div>
+      <i aria-hidden="true"></i>
+      <div><strong id="statPercent">0%</strong><span>aproveitamento</span></div>
+    </div>
+
+    <h2 class="quiz-result__title" id="resultTitle" tabindex="-1"></h2>
+    <p class="quiz-result__text" id="resultText"></p>
+
+    <ol class="quiz-dots" id="resultDots" aria-label="Resultado por pergunta"></ol>
+
+    <div class="quiz-result__actions">
+      <button class="quiz-btn quiz-btn--primary" id="restartBtn" type="button">Refazer quiz</button>
+      <a class="quiz-btn quiz-btn--ghost" href="index.html">Voltar para o site</a>
+    </div>
+  </section>
+
+  <noscript><p class="quiz-lead">O quiz precisa de JavaScript ativado no navegador para funcionar.</p></noscript>
+</main>
+
+<script src="quiz.js" defer></script>
+</body>
+</html>

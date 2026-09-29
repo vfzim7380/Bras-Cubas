@@ -140,6 +140,28 @@ O projeto também considera:
 * uso de animações baseadas principalmente em `transform` e `opacity`;
 * prevenção de overflow horizontal.
 
+## Quiz
+
+A página `quiz.html` reúne 10 perguntas baseadas no conteúdo do site (múltipla escolha, verdadeiro/falso e uma questão com várias respostas corretas). Ela funciona 100% no navegador, sem servidor, e mostra pontuação, acertos, erros, aproveitamento e uma mensagem final. O convite para o quiz aparece no final da página principal, e o quiz tem um botão para voltar ao site.
+
+Para editar perguntas, alternativas ou mensagens, basta mexer no início do arquivo `quiz.js` (array `QUESTIONS`).
+
+## Modo claro / escuro
+
+O botão no canto superior direito alterna entre o tema escuro (padrão) e o claro. A escolha é salva no `localStorage` (chave `bc-theme`) e vale para o site e para o quiz. As cores dos dois temas ficam como variáveis CSS no começo de `style.css` (`:root` para o escuro e `[data-theme="light"]` para o claro).
+
+## Arquivos
+
+```text
+index.html   página principal (scroll storytelling)
+style.css    estilos do site + tokens dos temas + componentes compartilhados (botões, botão de tema)
+script.js    controle das cenas por scroll
+theme.js     alternância e persistência do tema (usado nas duas páginas)
+quiz.html    página do quiz
+quiz.css     estilos exclusivos do quiz
+quiz.js      perguntas e lógica do quiz
+```
+
 ## Como executar
 
 Não é necessário instalar dependências para executar a versão atual.

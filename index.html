@@ -6,6 +6,7 @@
 <title>Memórias Póstumas de Brás Cubas — uma experiência</title>
 <meta name="theme-color" content="#11100E">
 <meta name="description" content="Uma experiência narrativa em scroll sobre Memórias Póstumas de Brás Cubas, de Machado de Assis.">
+<script src="theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -14,6 +15,14 @@
 <body>
 <div class="grain" aria-hidden="true"></div>
 <div class="chapter-wash" aria-hidden="true"></div>
+
+<!-- ALTERNAR TEMA (escuro / claro) -->
+<button class="theme-toggle theme-toggle--fixed" type="button" data-theme-toggle aria-label="Ativar modo claro" aria-pressed="false">
+  <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+  <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+  <span class="theme-toggle__text theme-toggle__text--to-light">modo claro</span>
+  <span class="theme-toggle__text theme-toggle__text--to-dark">modo escuro</span>
+</button>
 
 <nav class="visually-hidden" aria-label="Aviso">
   Esta página não possui menu de navegação. Percorra o conteúdo rolando a tela.
@@ -318,6 +327,18 @@
   </section>
 
 </main>
+
+  <!-- CONVITE PARA O QUIZ -->
+  <section class="quiz-cta" aria-labelledby="quiz-cta-title">
+    <div class="quiz-cta__inner">
+      <span class="chapter__eyebrow">quiz · 10 perguntas</span>
+      <div class="quiz-cta__rule" aria-hidden="true"></div>
+      <h2 id="quiz-cta-title">Teste seus conhecimentos</h2>
+      <p>Depois de conhecer a história de Brás Cubas, que tal descobrir quanto você aprendeu?</p>
+      <a class="quiz-btn quiz-btn--primary" href="quiz.html">Fazer o quiz</a>
+    </div>
+  </section>
+
   <section class="sources" aria-labelledby="sources-title">
     <div class="sources__inner">
       <span class="chapter__eyebrow">ficha da experiência</span>
