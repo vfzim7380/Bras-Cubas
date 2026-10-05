@@ -12,7 +12,7 @@ O site parte de um ponto específico:
 
 A história começa depois da morte de Brás Cubas. Conforme o usuário rola a página, a narrativa volta no tempo e apresenta acontecimentos importantes de sua vida.
 
-A experiência passa por momentos como:
+A experiência passa por 12 momentos narrativos como:
 
 * A morte
 * O defunto autor
@@ -68,9 +68,9 @@ O projeto utiliza JavaScript para controlar a progressão das cenas conforme o u
 
 ## Estrutura da experiência
 
-A página é organizada em capítulos.
+A página é organizada em 12 momentos narrativos. Eles são blocos temáticos da experiência e não correspondem aos capítulos numerados do romance.
 
-Cada capítulo possui uma composição visual própria, enquanto a timeline vertical acompanha o progresso do usuário.
+Cada momento possui uma composição visual própria, enquanto a timeline vertical acompanha o progresso do usuário.
 
 O objetivo é fazer com que a navegação não pareça apenas uma sequência de páginas, mas uma única experiência contínua.
 
@@ -178,7 +178,7 @@ Também é possível utilizar uma extensão como **Live Server** no VS Code para
 
 ## Autor
 
-Projeto desenvolvido por **Vinícios de Faria**.
+Projeto desenvolvido por **Eron · Gabriel F. · Heitor · Lucas · Vinicios**.
 
 Projeto escolar baseado na obra:
 

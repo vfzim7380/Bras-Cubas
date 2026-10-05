@@ -7,7 +7,7 @@
               'truefalse' → Verdadeiro / Falso
               'multiple'  → várias corretas (o aluno marca e confirma)
      correct: lista com os ÍNDICES das opções corretas (0 = A, 1 = B ...)
-     chapter: capítulo do site onde o tema aparece (usado no link "Rever no site")
+     chapter: momento do site onde o tema aparece (usado no link "Rever no site")
    ============================================================ */
 (function () {
   'use strict';
@@ -23,7 +23,7 @@
         'Brás Cubas está desenvolvendo o Emplasto.'
       ],
       correct: [1],
-      chapter: { id: 'cap01', label: 'Capítulo 01 · A Morte' }
+      chapter: { id: 'cap01', label: 'Momento 01 · A Morte' }
     },
     {
       type: 'single',
@@ -35,63 +35,63 @@
         'Um político que Brás Cubas conheceu na vida adulta.'
       ],
       correct: [2],
-      chapter: { id: 'cap04', label: 'Capítulo 04 · Infância' }
+      chapter: { id: 'cap04', label: 'Momento 04 · Infância' }
     },
     {
       type: 'truefalse',
       text: 'Marcela amou Brás Cubas durante quinze meses e onze contos de réis.',
       options: ['Verdadeiro', 'Falso'],
       correct: [0],
-      chapter: { id: 'cap05', label: 'Capítulo 05 · Marcela' }
+      chapter: { id: 'cap05', label: 'Momento 05 · Marcela' }
     },
     {
       type: 'single',
-      text: 'Por que Brás Cubas foi mandado para a Europa?',
+      text: 'Para que Brás Cubas foi enviado à Europa?',
       options: [
         'Para se tornar diplomata.',
         'Para iniciar uma carreira militar.',
-        'Para completar sua educação e se afastar de Marcela.',
+        'Para completar sua educação.',
         'Para procurar Virgília.'
       ],
       correct: [2],
-      chapter: { id: 'cap06', label: 'Capítulo 06 · Europa' }
+      chapter: { id: 'cap06', label: 'Momento 06 · Europa' }
     },
     {
       type: 'single',
       text: 'Com quem Virgília escolheu se casar?',
-      options: ['Quincas Borba.', 'Lobo Neves.', 'Damião Cubas.', 'Prudêncio.'],
+      options: ['Quincas Borba.', 'Lobo Neves.', 'Marcela.', 'Prudêncio.'],
       correct: [1],
-      chapter: { id: 'cap07', label: 'Capítulo 07 · Virgília' }
+      chapter: { id: 'cap07', label: 'Momento 07 · Virgília' }
     },
     {
       type: 'multiple',
       text: 'Quais são temas importantes da obra?',
       options: ['Ironia', 'Vaidade', 'Crítica à elite', 'Idealização da sociedade'],
       correct: [0, 1, 2],
-      chapter: { id: 'cap11', label: 'Capítulo 11 · O Que Ficou' }
+      chapter: { id: 'cap11', label: 'Momento 11 · O Que Ficou' }
     },
     {
       type: 'truefalse',
       text: 'O Humanitismo é uma filosofia criada por Quincas Borba.',
       options: ['Verdadeiro', 'Falso'],
       correct: [0],
-      chapter: { id: 'cap08', label: 'Capítulo 08 · Quincas Borba' }
+      chapter: { id: 'cap08', label: 'Momento 08 · Quincas Borba' }
     },
     {
       type: 'single',
-      text: 'Qual era a finalidade do Emplasto Brás Cubas?',
+      text: 'O que o Emplasto Brás Cubas representava para o personagem?',
       options: [
-        'Combater a melancolia e levar o nome de Brás Cubas à posteridade.',
+        'Combater a melancolia e associar o nome de Brás Cubas à posteridade.',
         'Tratar exclusivamente doenças respiratórias.',
         'Ajudar Quincas Borba a desenvolver o Humanitismo.',
         'Curar Prudêncio dos efeitos da escravidão.'
       ],
       correct: [0],
-      chapter: { id: 'cap09', label: 'Capítulo 09 · O Emplasto' }
+      chapter: { id: 'cap09', label: 'Momento 09 · O Emplasto' }
     },
     {
       type: 'single',
-      text: 'Segundo o site, como Brás Cubas morreu?',
+      text: 'Como Brás Cubas morreu?',
       options: [
         'Aos 50 anos, vítima de uma febre.',
         'Aos 64 anos, vítima de pneumonia.',
@@ -99,19 +99,19 @@
         'Aos 70 anos, após concluir o Emplasto.'
       ],
       correct: [1],
-      chapter: { id: 'cap10', label: 'Capítulo 10 · A Morte' }
+      chapter: { id: 'cap10', label: 'Momento 10 · A Morte' }
     },
     {
       type: 'single',
-      text: 'Qual interpretação o site apresenta para a cena em que Brás Cubas usa Prudêncio como um cavalo?',
+      text: 'Em que data Brás Cubas afirma ter nascido?',
       options: [
-        'Uma demonstração da educação exemplar de Brás Cubas.',
-        'Uma crítica à reprodução da violência dentro do sistema escravista.',
-        'Uma prova da amizade entre Brás Cubas e Prudêncio.',
-        'Uma lembrança sem importância para a crítica social do romance.'
+        '20 de outubro de 1805.',
+        '20 de outubro de 1839.',
+        '15 de novembro de 1805.',
+        '20 de outubro de 1869.'
       ],
-      correct: [1],
-      chapter: { id: 'cap04', label: 'Capítulo 04 · Infância' }
+      correct: [0],
+      chapter: { id: 'cap03', label: 'Momento 03 · Nascimento' }
     }
   ];
 
